@@ -12,6 +12,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @title = "#{@user.name}"
+    @tags = @user.tags
   end
   
   def new

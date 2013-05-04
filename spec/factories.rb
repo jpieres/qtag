@@ -9,4 +9,11 @@ FactoryGirl.define do
       admin true
     end
   end
+
+  factory :tag do
+    hashtag "MyString"
+    name "MyString"
+    description "MyString"
+    user
+  end
 end

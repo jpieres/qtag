@@ -40,10 +40,19 @@ describe "UserPages" do
 
   describe "profile page" do
     let(:user) { FactoryGirl.create(:user) }
+    let!(:t1) { FactoryGirl.create(:tag, user: user, name: "Foo", description: "Foo description", hashtag:"AAAAAAAAA") }
+    let!(:t2) { FactoryGirl.create(:tag, user: user, name: "Bar", description: "Bar description", hashtag:"BBBBBBBBB") }
+
     before { visit user_path(user) }
 
     it { should have_selector('h1',    text: user.name) }
     it { should have_selector('title', text: user.name) }
+
+    describe "tags" do
+      it { should have_content(t1.name) }
+      it { should have_content(t2.name) }
+      it { should have_content(user.tags.count) }
+    end
   end
 
   describe "signup" do

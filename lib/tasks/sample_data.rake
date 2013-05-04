@@ -14,5 +14,11 @@ namespace :db do
                    password: password,
                    password_confirmation: password)
     end
+    
+    user = User.all(limit: 6)
+    5.times do
+      name = Faker::Lorem.sentence(5)
+      users.each { |user| user.tags.create!(name: name) }
+    end
   end
 end
