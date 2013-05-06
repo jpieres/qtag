@@ -15,6 +15,15 @@ class UsersController < ApplicationController
     @tags = @user.tags
   end
   
+  def show_hash
+    hashtag = params[:user_hash]
+    @tag = Tag.find_by_hashtag hashtag
+    if !@tag
+      flash[:error] = "The Qtag #{hashtag} does not exist."
+      redirect_to root_path
+    end
+  end
+
   def new
     @user = User.new
     @title = "Sign up"

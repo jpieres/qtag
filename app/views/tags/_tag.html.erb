@@ -1,6 +1,11 @@
 <li>
+<h2><%= @user_hash %></h2>
   <span class="content"><%= tag.name %></span>
+<%= image_tag tag.image %>
   <span class="timestamp">
     Created <%= time_ago_in_words(tag.created_at) %> ago.
   </span>
 </li>
+
+
+
