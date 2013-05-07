@@ -24,3 +24,6 @@ doc/
 
 # Ignore Paperclip folders
 public/system
+
+# Ignore S3 credentials
+config/s3.yml

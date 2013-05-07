@@ -1,4 +1,4 @@
-<h1><%= @user.name %></h1>
+<h1><%= "Tags for #{@user.name}" %></h1>
   <% if @user.tags.any? %>
     <h3>Tags (<%= @user.tags.count %>)</h3>
     <ol class="tags">

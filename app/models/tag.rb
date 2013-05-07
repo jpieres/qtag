@@ -4,7 +4,8 @@ class Tag < ActiveRecord::Base
   validates :name, presence: true
 
   belongs_to :user
-  has_attached_file :image #, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/images/:style/missing.png"
+  has_attached_file :image, :storage => :s3, :s3_credentials => "#{Rails.root}/config/s3.yml"
+
   before_create :create_and_assign_hashtag
 
   private

@@ -9,6 +9,8 @@ gem 'bootstrap-will_paginate', '0.0.6'
 gem 'rqrcode'
 gem 'chunky_png'
 gem "paperclip", "~> 3.0"
+gem 'aws-s3'
+gem 'aws-sdk'
 
 group :development, :test do
   gem 'sqlite3', '1.3.5'
